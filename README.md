@@ -1,0 +1,1 @@
+Image files must be located in /home/sgy/Dropbox/cookbook/figures .
