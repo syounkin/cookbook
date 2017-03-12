@@ -1,3 +1,8 @@
-Image files must be located in ~/Dropbox/cookbook/figures/.
+System Requirements
+* LaTeX
+* Dropbox
+* GNU Make
 
-To create `cookbook.pdf` use `make cookbook`.
+The 'cookbook' directory must be located in '~/Dropbox/'.
+
+To create `cookbook.pdf` simply run `make cookbook`.
