@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/syounkin/cookbook.png?label=ready&title=Ready)](https://waffle.io/syounkin/cookbook)
 System Requirements
 * LaTeX
 * Dropbox
