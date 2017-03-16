@@ -7,3 +7,4 @@ figures/*
 cookbook-corrupted
 *.jpg
 *.zip
+tex/cookbook.synctex.gz
