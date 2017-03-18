@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{layout}
 \usepackage{caption}
+\usepackage{makeidx}
 \RecipeWidths{\textwidth}{0.01\textwidth}{0.2\textwidth}{0.25\textwidth}{0.09\textwidth}{0.08\textwidth}
 % total, recipe #, servings, ingredients, quantity, units
 \renewcommand*{\recipetitlefont}{\large\bfseries\sffamily}
@@ -16,6 +17,7 @@
 \renewcommand*{\recipeunitfont}{\sffamily}
 \renewcommand*{\recipeingredientfont}{\sffamily}
 \renewcommand*{\recipefreeformfont}{\itshape}
+\makeindex
 \input{./sgy-custom}
 \begin{document}
 %\layout
@@ -135,4 +137,6 @@
 \part{Jacksonville, Florida}
 \part{Denver, Colorado}
 \input{./../recipes/worlds-best-pancakes}
+\clearpage
+\printindex
 \end{document}
