@@ -2,6 +2,7 @@ all: cookbook
 
 cookbook: tex/cookbook.tex
 	cd tex; pdflatex cookbook.tex
+	cd tex; pdflatex cookbook.tex
 	cd tex; makeindex cookbook
 	cd tex; pdflatex cookbook.tex
 	mv -v ./tex/cookbook.pdf ./
