@@ -20,21 +20,18 @@
 \renewcommand*{\recipefreeformfont}{\itshape}
 \makeindex
 \input{./sgy-custom}
-\titleformat{\chapter}{\bfseries\LARGE\itshape}{}{0.5ex}{}{}
-
+\titleformat{\chapter}{\bfseries\Huge\itshape}{}{0.5ex}{}{}
 \newcommand{\mychapter}[2]{
   \setcounter{chapter}{#1}
   \setcounter{section}{0}
-  \chapter*{#2}
+  \chapter*{Recipes from #2}
   \addcontentsline{toc}{chapter}{#2}
   }
 \newcommand{\mysection}[2]{
-  %\setcounter{chapter}{#1}
   \setcounter{section}{#1}
   \section*{#2}
   \addcontentsline{toc}{section}{#2}
   }
-
 \begin{document}
 %\layout
 \frontmatter
