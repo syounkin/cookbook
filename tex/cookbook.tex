@@ -1,4 +1,4 @@
-\documentclass[12pt, final]{book}
+\documentclass[12pt, final, nonumber]{book}
 %\documentclass[12pt, draft]{book}
 \usepackage[nonumber]{cuisine}
 \usepackage[loose]{units}
@@ -8,6 +8,7 @@
 \usepackage{layout}
 \usepackage{caption}
 \usepackage{makeidx}
+\usepackage{titlesec}
 \RecipeWidths{\textwidth}{0.01\textwidth}{0.2\textwidth}{0.25\textwidth}{0.09\textwidth}{0.08\textwidth}
 % total, recipe #, servings, ingredients, quantity, units
 \renewcommand*{\recipetitlefont}{\large\bfseries\sffamily}
@@ -19,17 +20,32 @@
 \renewcommand*{\recipefreeformfont}{\itshape}
 \makeindex
 \input{./sgy-custom}
+\titleformat{\chapter}{\bfseries\LARGE\itshape}{}{0.5ex}{}{}
+
+\newcommand{\mychapter}[2]{
+  \setcounter{chapter}{#1}
+  \setcounter{section}{0}
+  \chapter*{#2}
+  \addcontentsline{toc}{chapter}{#2}
+  }
+\newcommand{\mysection}[2]{
+  %\setcounter{chapter}{#1}
+  \setcounter{section}{#1}
+  \section*{#2}
+  \addcontentsline{toc}{section}{#2}
+  }
+
 \begin{document}
 %\layout
 \frontmatter
 \input{./title}
 \cleardoublepage
-\section*{Younkin Family Cookbook --- October 2014}
+%\mysection{0}{Younkin Family Cookbook --- October 2014}
 \input{./introduction}
 \tableofcontents
 \mainmatter
-\chapter{Madison}
-\section{Main Course}\label{maincourse}
+\mychapter{0}{Madison}
+\mysection{0}{Main Course}\label{maincourse}
 \input{./../recipes/macaroni-and-cheese}
 %\newpage
 \input{./../recipes/caesar-salad}
@@ -39,27 +55,27 @@
 \input{./../recipes/herb-pasta}
 %\newpage
 \input{./../recipes/lobster-grilled}
-%\section{Chili}
+%\mysection{0}{Chili}
 \input{./../recipes/beef-chili}
 \input{./../recipes/prison-chili}
 \input{./../recipes/cincinnati-chili}
 \input{./../recipes/chicken-chili}
 \input{./../recipes/joc-chili}
 \clearpage
-\section{Small Dishes \& Sides}\label{smalldishes}
+\mysection{0}{Small Dishes \& Sides}\label{smalldishes}
 \input{./../recipes/prosciutto-wrap}
 %\newpage
 \input{./../recipes/buttermilk-biscuits}
 %\newpage
 \input{./../recipes/grandmas-rice}
 \clearpage
-\section{Breakfast}\label{breakfast}
+\mysection{0}{Breakfast}\label{breakfast}
 \input{./../recipes/monkey-bread}
 %\newpage
 \input{./../recipes/french-toast}
 %\newpage
 \clearpage
-\section{Dessert}\label{dessert}
+\mysection{0}{Dessert}\label{dessert}
 \input{./../recipes/allendale-brownies}
 %\newpage
 \input{./../recipes/caramel-peach-crunch}
@@ -71,12 +87,12 @@
 \input{./../recipes/banana-bread}
 %\newpage
 \clearpage
-\section{Coffee}\label{coffee}
+\mysection{0}{Coffee}\label{coffee}
 \input{./../recipes/chemex}
 %\newpage
 \input{./../recipes/hario-v60}
 \clearpage
-\section{Thanksgiving}\label{thanksgiving}
+\mysection{0}{Thanksgiving}\label{thanksgiving}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %~~~~~~~~~ Turkey Figure ~~~~~~~~~~~~~~~~~~~~~~~~~~
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,7 +121,7 @@
 %\newpage
 \input{./../recipes/pecan-tassies}
 \clearpage
-\section{Chili Powder}
+\mysection{0}{Chili Powder}
 \input{./../recipes/chili-powder-10}
 \input{./../recipes/chili-powder-9}
 \input{./../recipes/chili-powder-8}
@@ -114,12 +130,12 @@
 %% \input{./../recipes/chili-powder-5}
 %% \input{./../recipes/chili-powder-4}
 %% \input{./../recipes/chili-powder}
-\section{Canning}
+\mysection{0}{Canning}
 \input{./../recipes/red-pepper-relish}
 %% %\newpage
 %% \input{./../recipes/sauerkraut}
 %%\newpage
-%\section{The Less Favorites}\label{lessfavorites}
+%\mysection{0}{The Less Favorites}\label{lessfavorites}
 %\input{./../recipes/basic-rib-rub}
 %%\newpage
 %\input{./../recipes/barbecue-mop}
@@ -144,11 +160,11 @@
 \end{center}
 \caption*{Datil chili peppers and whole cumin seed}
 \end{figure}
-\chapter{Denver}
-\section{Breakfast}\label{denverbreakfast}
+\mychapter{0}{Denver}
+\mysection{0}{Breakfast}\label{denverbreakfast}
 \input{./../recipes/worlds-best-pancakes}
-\chapter{Jacksonville Beach}
-\chapter{Ponte Vedra Beach}
+\mychapter{0}{Jacksonville Beach}
+\mychapter{0}{Ponte Vedra Beach}
 \clearpage
 \printindex
 \end{document}
