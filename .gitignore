@@ -11,3 +11,4 @@ tex/cookbook.synctex.gz
 *.idx
 *.ilg
 *.ind
+*.out
