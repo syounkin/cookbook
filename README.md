@@ -9,3 +9,4 @@ be located in '~/Dropbox/'.
 To create `cookbook.pdf` simply run `make cookbook`.
 
 [![Stories in Ready](https://badge.waffle.io/syounkin/cookbook.png?label=ready&title=Ready)](https://waffle.io/syounkin/cookbook)
+
