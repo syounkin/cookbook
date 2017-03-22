@@ -1,12 +1,20 @@
-\documentclass[12pt, final]{book}
+\documentclass[12pt]{book}
 %\documentclass[12pt, draft]{book}
-\usepackage[index, nonumber]{cuisine}
+\usepackage[nonumber]{cuisine}
 \usepackage[loose]{units}
 \usepackage{url}
 %\usepackage{path}
 \usepackage{graphicx}
 \usepackage{layout}
 \usepackage{caption}
+\usepackage{makeidx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true, %set true if you want colored links
+  linktoc=all,     %set to all if you want both sections and subsections linked
+  linkcolor=blue,  %choose some color if you want links to stand out
+  }
 \RecipeWidths{\textwidth}{0.01\textwidth}{0.2\textwidth}{0.25\textwidth}{0.09\textwidth}{0.08\textwidth}
 % total, recipe #, servings, ingredients, quantity, units
 \renewcommand*{\recipetitlefont}{\large\bfseries\sffamily}
@@ -16,110 +24,118 @@
 \renewcommand*{\recipeunitfont}{\sffamily}
 \renewcommand*{\recipeingredientfont}{\sffamily}
 \renewcommand*{\recipefreeformfont}{\itshape}
+\makeindex
 \input{./sgy-custom}
+\titleformat{\chapter}{\bfseries\Huge\itshape}{}{0.5ex}{}{}
+\newcommand{\mychapter}[1]{
+  %\setcounter{chapter}{2}
+  %\setcounter{section}{0}
+  \chapter{#1}
+  %\addcontentsline{toc}{chapter}{#1}
+  }
+\newcommand{\mysection}[1]{
+  %\setcounter{section}{#1}
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+  }
 \begin{document}
 %\layout
 \frontmatter
 \input{./title}
 \cleardoublepage
-\section*{Younkin Family Cookbook --- October 2014}
 \input{./introduction}
 \tableofcontents
 \mainmatter
-\part{Madison, Wisconsin}
-\chapter{Favorites}\label{favorites}
-\input{./../recipes/porridge}
-\newpage
+\mychapter{Madison}
+\mysection{Main Course}\label{maincourse}
 \input{./../recipes/macaroni-and-cheese}
-\newpage
 \input{./../recipes/caesar-salad}
-\newpage
-\chapter{Bread}\label{bread}
-\input{./../recipes/buttermilk-biscuits}
-\newpage
-\input{./../recipes/banana-bread}
-\newpage
-\input{./../recipes/monkey-bread}
-\newpage
-\chapter{Dessert}\label{dessert}
-\input{./../recipes/allendale-brownies}
-\newpage
-\input{./../recipes/caramel-peach-crunch}
-\newpage
-\input{./../recipes/peanut-blossoms}
-\newpage
-\input{./../recipes/hough-frosting}
-%% \newpage
-%% \section{Coffee}
-%% \input{./../recipes/chemex}
-%% \newpage
-%% \input{./../recipes/hario-v60}
+\input{./../recipes/barbecue-baked-beans}
+\input{./../recipes/herb-pasta}
+\input{./../recipes/lobster-grilled}
+\input{./../recipes/beef-chili}
+\input{./../recipes/prison-chili}
+\input{./../recipes/cincinnati-chili}
+\input{./../recipes/chicken-chili}
+\input{./../recipes/joc-chili}
 \clearpage
-\chapter{Thanksgiving}\label{chapter2}
+\mysection{Small Dishes \& Sides}\label{smalldishes}
+\input{./../recipes/cheese-chile-grits}
+\input{./../recipes/prosciutto-wrap}
+\input{./../recipes/buttermilk-biscuits}
+\input{./../recipes/grandmas-rice}
+\clearpage
+\mysection{Breakfast}\label{breakfast}
+\input{./../recipes/monkey-bread}
+\input{./../recipes/crepes}
+\input{./../recipes/french-toast}
+\clearpage
+\mysection{Dessert}\label{dessert}
+\input{./../recipes/allendale-brownies}
+\input{./../recipes/pecan-tassies}
+\input{./../recipes/caramel-peach-crunch}
+\input{./../recipes/peanut-blossoms}
+\input{./../recipes/hough-frosting}
+\input{./../recipes/banana-bread}
+\clearpage
+\mysection{Coffee}\label{coffee}
+\input{./../recipes/chemex}
+\input{./../recipes/hario-v60}
+\clearpage
+\mysection{Thanksgiving}\label{thanksgiving}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~ Turkey Figure ~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{\string~/Dropbox/cookbook/figures/turkey}
 \end{center}
 \caption*{Turkey on the barbecue. Baltimore, 201?}
 \end{figure}
-\newpage
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%\newpage
 \input{./../recipes/sailors-duff}
 \input{./../recipes/duff-sauce}
-\newpage
+%\newpage
 \input{./../recipes/stuffing}
-\newpage
+%\newpage
 \input{./../recipes/onion-casserole}
-\newpage
+%\newpage
 \input{./../recipes/green-bean-casserole}
-\newpage
+%\newpage
 \input{./../recipes/cornbread}
-\newpage
+%\newpage
 \input{./../recipes/turkey-carcass-soup}
-\newpage
-\input{./../recipes/pecan-tassies}
-\newpage
-\chapter{Canning \& Sauerkraut}
-\input{./../recipes/red-pepper-relish}
-\newpage
-\input{./../recipes/sauerkraut}
-\newpage
-\chapter{The Less Favorites}\label{lessfavorites}
-\input{./../recipes/basic-rib-rub}
-\newpage
-\input{./../recipes/barbecue-mop}
-\newpage
-\input{./../recipes/barbecue-baked-beans}
-\newpage
-\input{./../recipes/herb-pasta}
-\newpage
-\input{./../recipes/prosciutto-wrap}
-\newpage
-\input{./../recipes/lobster-grilled}
-\newpage
-\input{./../recipes/lobster-stock}
-\newpage
-\input{./../recipes/grandmas-rice}
-\newpage
-\input{./../recipes/ginger-soy-sauce}
-\newpage
-\input{./../recipes/refried-beans}
-\newpage
-\input{./../recipes/french-toast}
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\chapter{Chili}
-\input{./../recipes/beef-chili}
-\input{./../recipes/prison-chili}
-\input{./../recipes/cincinnati-chili}
-\input{./../recipes/chicken-chili}
-\input{./../recipes/joc-chili}
+%\newpage
+\clearpage
+\mysection{Chili Powder}
 \input{./../recipes/chili-powder-10}
 \input{./../recipes/chili-powder-9}
 \input{./../recipes/chili-powder-8}
-\input{./../recipes/chili-powder-7}
-\input{./../recipes/chili-powder-6}
-\input{./../recipes/chili-powder-5}
-\input{./../recipes/chili-powder-4}
-\input{./../recipes/chili-powder}
+%% \input{./../recipes/chili-powder-7}
+%% \input{./../recipes/chili-powder-6}
+%% \input{./../recipes/chili-powder-5}
+%% \input{./../recipes/chili-powder-4}
+%% \input{./../recipes/chili-powder}
+\mysection{Canning}
+\input{./../recipes/red-pepper-relish}
+%% %\newpage
+%% \input{./../recipes/sauerkraut}
+%%\newpage
+%\mysection{The Less Favorites}\label{lessfavorites}
+%\input{./../recipes/basic-rib-rub}
+%%\newpage
+%\input{./../recipes/barbecue-mop}
+%\input{./../recipes/lobster-stock}
+%%\newpage
+%\input{./../recipes/ginger-soy-sauce}
+%%\newpage
+%\input{./../recipes/refried-beans}
+%%\newpage
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \begin{figure}
 \begin{center}
 \includegraphics[height=0.5\textwidth]{\string~/Dropbox/cookbook/figures/datil-bite-me}
@@ -133,8 +149,13 @@
 \end{center}
 \caption*{Datil chili peppers and whole cumin seed}
 \end{figure}
-\part{Jacksonville, Florida}
-\part{Denver, Colorado}
+\mychapter{Denver}
+\mysection{Breakfast}\label{denverbreakfast}
 \input{./../recipes/worlds-best-pancakes}
 \input{./../recipes/chicken-adobo}
+\mychapter{Jacksonville Beach}
+\mychapter{Ponte Vedra Beach}
+\clearpage
+\printindex
+>>>>>>> master
 \end{document}
