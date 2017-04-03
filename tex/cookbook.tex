@@ -38,6 +38,11 @@
   \section*{#1}
   \addcontentsline{toc}{section}{#1}
   }
+\newcommand{\mysubsection}[1]{
+  %\setcounter{section}{#1}
+  \subsection*{#1}
+  \addcontentsline{toc}{subsection}{#1}
+  }
 \begin{document}
 %\layout
 \frontmatter
@@ -54,19 +59,17 @@
 \tableofcontents
 \mainmatter
 \mychapter{Madison}
-\mysection{Main Course}\label{maincourse}
+\mysection{Main Dish}\label{maincourse}
 \input{./../recipes/macaroni-and-cheese}
 \input{./../recipes/caesar-salad}
-\input{./../recipes/barbecue-baked-beans}
 \input{./../recipes/herb-pasta}
-\input{./../recipes/lobster-grilled}
+%%\mysubsection{Chili}
 \input{./../recipes/beef-chili}
-\input{./../recipes/prison-chili}
-\input{./../recipes/cincinnati-chili}
-\input{./../recipes/chicken-chili}
-\input{./../recipes/joc-chili}
+%%\input{./../recipes/prison-chili}
+%%\input{./../recipes/chicken-chili}
+%%\input{./../recipes/joc-chili}
 \clearpage
-\mysection{Small Dishes \& Sides}\label{smalldishes}
+\mysection{Small Dish}\label{smalldishes}
 \input{./../recipes/cheese-chile-grits}
 \input{./../recipes/prosciutto-wrap}
 \input{./../recipes/buttermilk-biscuits}
@@ -107,6 +110,9 @@
 \input{./../recipes/turkey-carcass-soup}
 \clearpage
 \mysection{Miscellaneous}
+\input{./../recipes/cincinnati-chili}
+\input{./../recipes/barbecue-baked-beans}
+\input{./../recipes/lobster-grilled}
 \input{./../recipes/chili-powder-10}
 \input{./../recipes/red-pepper-relish}
 %% \begin{figure}[b!]
@@ -121,10 +127,13 @@
 \input{./../recipes/chemex}
 \clearpage
 \mychapter{Denver}
+\mysection{Breakfast}
 \input{./../recipes/worlds-best-pancakes}
+\mysection{Main Dish}
 \input{./../recipes/chicken-adobo}
-\input{./../recipes/spiced-oatmeal-chocolate-chip-cookies}
 \input{./../recipes/garbanzos}
+\mysection{Dessert}
+\input{./../recipes/spiced-oatmeal-chocolate-chip-cookies}
 \clearpage
 \printindex
 \end{document}
