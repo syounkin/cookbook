@@ -1,6 +1,6 @@
 all: cookbook dropbox
 
-cookbook: tex/cookbook.tex
+cookbook: tex/cookbook.tex recipes/grandmas-rice.tex
 	cd tex; pdflatex cookbook.tex
 	cd tex; pdflatex cookbook.tex
 	cd tex; makeindex cookbook
