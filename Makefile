@@ -8,7 +8,7 @@ cookbook: tex/cookbook.tex recipes/grandmas-rice.tex
 	mv -v ./tex/cookbook.pdf ./
 
 dropbox: cookbook.pdf
-	cp -v cookbook.pdf ~/Dropbox/cookbook/
+	cp -v cookbook.pdf ~/data/Dropbox/younkin/samuel/cookbook/
 
 clean:
 	rm -f ./tex/*.aux
